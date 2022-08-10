@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        
+        .wrapper{
+            margin: 0 auto;
+            height: 1000px;
+            width: 100%;
+            /* background-color: bisque; */
+        }
+
+        .container{
+            margin: 0 auto;
+            width: 1000px;
+            height: 800px;
+            display: flex;
+            margin-top: 50px;
+            justify-content: space-between;
+            /* background-color: brown; */
+        }
+
+        .Reg  {
+            
+            width: 450px;
+            height: 700px;
+            background-color: rgb(39, 39, 39);
+        }
+        .Log{
+            width: 450px;
+            height: 700px;
+            background-color: rgb(39, 39, 39);
+        }
+
+        .Login{
+            font-size: 50px;
+            color: rgb(221, 145, 4);
+            margin-left: 25px;
+            margin-bottom: 50px;
+        }
+        .register{
+            font-size: 50px;
+            color: rgb(0, 161, 201);
+            margin-left: 25px;
+            margin-bottom: 50px;
+        }
+        .form{
+            color: rgb(0, 0, 0);
+            margin-left: 25px;
+            margin-bottom: 23px;
+            font-size: 22px;
+            
+        }
+        .btn{
+            color: white;
+            margin-left: 6px;
+            margin-bottom: 23px;
+            font-size: 22px;
+            /* background-color: yellow; */
+        }
+        .btn-primary{
+            background-color: rgb(0, 161, 201);
+        }
+        .btn-primary2{
+            background-color: rgb(221, 145, 4);
+        }
+        .label{
+            color: white;
+            font-size: 20px;
+            margin-left: -10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class= "container">
+
+            <div class="Reg">
+                <h1 class="register">
+                    Register
+                </h1>
+                
+                <form action="/new_user" method = 'post'>
+                
+                
+                    <div class="form" class="form-group">
+                        <label class="label" for="first_name">First Name:</label><br>
+                        <input type="text" name="first_name"> 
+                    </div>
+                    
+                    <div class="form" class="form-group">
+                        <label class="label" for="last_name">Last Name:</label><br>
+                        <input name="last_name" type="text">     
+                    </div>
+
+                    <div class="form" class="form-group">
+                        <label class="label" for="email">Email:</label><br>
+                        <input name = "email" type="email"> 
+                        
+                    </div>
+
+                    <div class="form">
+                        <label class="label" for="password">Password:</label><br>
+                        <input name="password" type="password">
+                    </div>
+
+                    <div class="form">
+                        <label class="label" for="confirm_password">Confirm Password:</label><br>
+                        <input name="confirm_password" type="password">
+                    </div>
+
+                    <div class="btn">
+                        <input class="btn btn-primary" type="submit">
+                    </div>
+                    
+                
+                </form>    
+                        
+                <br>
+                {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                        {% if messages %}                            <!-- check if there are any messages -->
+                            {% for message in messages %}            <!-- loop through the messages -->
+                                <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                            {% endfor %}
+                        {% endif %}
+                {% endwith %}
+                
+            </div>
+            
+            <div class="Log">
+                <h1 class="Login">
+                    Login</h1>
+                <form action="/login" method="post">
+                    <div class="form" class="form-group">
+                        <label class="label" for="email">Email:</label><br>
+                        <input name="email"type="email"> 
+                    </div>
+
+                    <div class="form">
+                        <label class="label" for="password">Password:</label><br>
+                        <input name="password"type="password">
+                    </div>
+
+                    <div class="btn">
+                        <input class="btn btn-primary2" type="submit">
+                    </div>
+                
+                </form>
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
