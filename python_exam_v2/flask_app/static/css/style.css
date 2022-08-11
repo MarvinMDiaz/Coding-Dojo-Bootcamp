@@ -1,0 +1,116 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+        .wrapper{
+            margin: 0 auto;
+            height: 1000px;
+            width: 100%;
+        }
+
+        .container{
+            margin: auto;
+            width: 1000px;
+            height: 800px;
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .Reg  {
+            
+            width: 450px;
+            height: 450px;
+            background: #FF416C;
+	        background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	        background: linear-gradient(to right, #FF4B2B, #FF416C);
+	        background-position: 0 0;
+	        color: #FFFFFF;
+            border-bottom-left-radius: 25px;
+            border-top-left-radius: 25px;
+            box-shadow: -10px -3px 10px 1px #aaaaaa;
+        }
+        
+        .Log{
+            width: 450px;
+            height: 450px;
+            border-bottom-right-radius: 25px;
+            border-top-right-radius: 25px;
+            box-shadow: 10px -3px 10px 1px #aaaaaa;
+            
+        }
+
+        .Login{
+            font-size: 50px;
+            margin-left: 25px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .register{
+            font-size: 50px;
+            color: white;
+            margin-left: 25px;
+            margin-bottom: 50px;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .form{
+            color: rgb(0, 0, 0);
+            margin-left: 25px;
+            margin-bottom: 23px;
+            font-size: 22px;
+            
+        }
+        .btn{
+            color: white;
+            margin-left: 6px;
+            margin-bottom: 23px;
+            font-size: 22px;
+            margin-left: 180px;
+            /* background-color: yellow; */
+        }
+        .btn-primary{
+            background-color: rgb(0, 161, 201);
+        }
+        .btn-primary2{
+            border-radius: 25px; 
+            height: 40px;
+            width: 110px;
+            /* background: transparent; */
+            border-color: rgb(177, 31, 31);
+            border-style: solid;
+            color: white;
+            margin: 0 auto;
+            background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	        background: linear-gradient(to right, #FF4B2B, #FF416C);
+        }
+        .label{
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+        }
+                    
+        .sign_up{
+            border-radius: 25px; 
+            height: 40px;
+            width: 110px;
+            background: transparent;
+            border-color: white;
+            border-style: solid;
+            color: white;
+            
+        }
+        .btnn{
+            margin-left: 180px;
+        }
+
+        .input_f{
+            margin-left: 45px;
+            height: 28px;
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(226, 226, 226);
+        }
+        .valid{
+            font-size: 20px;
+            margin-left: 65px;
+            color: red;
+        }
+        

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reg_form.css') }}">
+    <style>
+        a{
+            color: rgb(236, 62, 9);
+        }
+        /* body{
+
+            background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+
+        } */
+        .wrapper{
+            height: 1200px;
+            width: 1200px;
+            background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+            margin: 0 auto;
+        }
+        .container{
+            width: 1000px;
+            height: 800px;
+            background-color: white;
+            margin: 0 auto;
+        }
+        .header{
+            height: 70px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: rgb(53, 53, 53);
+            display: flex;
+            /* justify-content: space-between; */
+            align-items:center;
+            color: white;
+            /* margin-left: 100px; */
+        }
+        .welcome{
+            margin-right: 320px;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+        .log_off{
+            margin-left: 40px;
+        }
+        .recipes{
+            margin: 0 auto;
+            display: flex;
+            width: 950px;
+            height: 500px;
+            /* background-color: violet; */
+            display: inline-block;
+        }
+        .table_sec{
+            width: 600px;
+            height: 400px;
+            background-color: rgb(133, 133, 133);
+            border-style: solid;
+        }
+        .lg_off{
+            background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+
+        }
+        .new_tree{
+            /* margin-right: 10px; */
+            margin-left: 15px;
+        }
+        h1{
+            font-size: 25px;
+        }
+    </style>
+    <title>Sign Up</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header">
+            
+        <h1 class="welcome"> Welcome to Arbortrary {{user.first_name}}!!</h1>
+        <a href="/dashboard/my_trees"> My Trees</a>
+        <a class="new_tree" href="/dashboard"> Dashboard</a>
+            <form class="log_off" action="/sign_out">
+                <button class="lg_off" type="submit">Log Off</button>
+            </form>
+    </div>
+
+
+
+    
+    <div class="registration_form">
+        <div class="color_bar"></div>
+        
+        
+        <form class="form_container"action="/dashboard/new_tree/Create" method = 'post'>
+            <h1 class="hello">
+                Re-Plant Your Tree!  
+            </h1>
+        
+            <div class="form" class="form-group">
+                <label class="label" for="species"></label><br>
+                <img class="person-fill"src="{{ url_for('static', filename='img/person-fill.svg') }}">
+                <input class="input_f" placeholder="Species"type="text" value="{{tree.species}}" name="species"> 
+            </div>
+            
+            <div class="form" class="form-group">
+                
+                <label class="label" for="location"></label><br>
+                <img class="person-fill"src="{{ url_for('static', filename='img/person-fill.svg') }}">
+                <input  class="input_f" placeholder="Location" value="{{tree.location}}" name="location" type="text">     
+            </div>
+
+            <div class="form" class="form-group">
+                <label class="label" for="reason"></label><br>
+                <img class="person-fill"src="{{ url_for('static', filename='img/envelope-fill.svg') }}">
+                <input class="input_f" placeholder="Reason" value="{{tree.reason}}"name = "reason" type="text"> 
+                
+            </div>
+            <div class="form" class="form-group">
+
+                <img class="person-fill"src="{{ url_for('static', filename='img/envelope-fill.svg') }}">
+                <label class="date" for="date_planted">Date Planted:</label>
+
+                <input type="date" value="{{tree.date_planted.strftime('%m-%d-%Y')}}" name="date_planted">
+
+                
+                
+            </div>
+
+            
+            
+            <div class="btn">
+                <input class="btn-primary2" value="Plant Tree"type="submit">
+            </div>
+            <div>
+                {% with messages = get_flashed_messages() %} 
+                {%if messages%}
+                        {% for message in messages %}
+                            <p class="valid">{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+            {% endwith %} 
+            
+            </div>
+        
+        </form>    
+                
+        <br>
+        
+    </div>
+    </div>
+    
+</body>
+</html>

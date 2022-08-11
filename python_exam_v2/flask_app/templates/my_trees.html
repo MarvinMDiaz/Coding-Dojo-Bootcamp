@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        body{
+
+            background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+
+        }
+        .wrapper{
+            height: 1200px;
+            width: 1200px;
+            background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+            margin: 0 auto;
+        }
+        .container{
+            width: 1000px;
+            height: 800px;
+            background-color: white;
+            margin: 0 auto;
+        }
+        a{
+            color: rgb(236, 62, 9);
+        }
+        .header{
+            height: 70px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: rgb(53, 53, 53);
+            display: flex;
+            /* justify-content: space-between; */
+            align-items:center;
+            color: white;
+            /* margin-left: 100px; */
+        }
+        .welcome{
+            margin-right: 320px;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+        .log_off{
+            margin-left: 40px;
+        }
+        .recipes{
+            margin: 0 auto;
+            display: flex;
+            width: 950px;
+            height: 500px;
+            /* background-color: violet; */
+            display: inline-block;
+        }
+        .table_sec{
+            width: 600px;
+            height: 400px;
+            background-color: rgb(133, 133, 133);
+            border-style: solid;
+        }
+        .lg_off{
+            background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+
+        }
+        .new_tree{
+            /* margin-right: 10px; */
+            margin-left: 15px;
+        }
+        h1{
+            font-size: 25px;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+
+        <div class="header">
+            
+            <h1 class="welcome"> Welcome to Arbortrary {{user.first_name}}!!</h1>
+            <a href="/dashboard"> Dashboard</a>
+            <a class="new_tree" href="/dashboard/new_tree"> Plant a Tree</a>
+                <form class="log_off" action="/sign_out">
+                    <button class="lg_off" type="submit">Log Off</button>
+                </form>
+        </div>
+        <div class="recipes">
+            <h4> Manage My Trees</h4> 
+            <div class="table_sec">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Species</th>
+                        <th>Date Planted</th>
+                        <th>Action</th>
+                        
+                    </tr>
+                    {% for tree in user.trees %}
+                    <tr>
+                        <td>{{tree.species}}</td>
+                        <td>{{tree.date_planted.strftime('%m-%d-%Y')}} </td>
+                        <td>
+                            
+                            <a href="/edit/{{tree.id}}">edit</a>
+                            
+                            <a href="/dashboard/view_tree/{{tree.id}}/destroy">delete</a>
+                            
+                            
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+    
+
+</body>
+</html>

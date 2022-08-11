@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class= "container">
+
+            <div class="Reg">
+                <h1 class="register">
+                    Hello, There!
+                </h1>
+                
+                <div class="btnn">
+                    <form action="/home/sign_up" >
+                        <button type="submit" class="sign_up"> Sign Up</button>
+                    </form>
+                </div>
+                
+        
+                
+            </div>
+            
+            <div class="Log">
+                <h1 class="Login"> Sign In</h1>
+                <form action="/home/login" method="post">
+                    <div class="form" class="form-group">
+                        <label class="label" for="email"></label><br>
+                        <input name="email"type="email" placeholder="Email" class="input_f"> 
+                    </div>
+
+                    <div class="form">
+                        <label class="label" for="password"></label><br>
+                        <input name="password" class="input_f" placeholder="Password"type="password">
+                    </div>
+
+                    <div class="btn">
+                        <input class="btn btn-primary2" value="Sign In" type="submit">
+                    </div>
+                    <div>
+                        {% with messages = get_flashed_messages() %} 
+                        {%if messages%}
+                                {% for message in messages %}
+                                    <p class="valid">{{message}}</p>
+                                {% endfor %}
+                            {% endif %}
+                    {% endwith %} 
+                    
+                    </div>
+                </form>
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>

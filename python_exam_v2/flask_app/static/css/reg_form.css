@@ -1,0 +1,84 @@
+body{
+    background-color: rgb(238, 238, 238);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.registration_form{
+    width: 450px;
+    height: 700px;
+    margin: 0 auto;
+    background-color: white;
+    /* box-shadow: -10px -3px 10px 1px #aaaaaa; */
+    box-shadow: 10px 10px 10px #aaaaaa;
+    /* box-shadow: 0 0 10px #000000; */
+    border-top-right-radius: 18px;
+        border-top-left-radius: 18px;
+    
+
+}
+
+.hello{
+        font-size: 50px;
+        margin-left: 25px;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-top: 40px;
+        
+    }
+
+.input_f{
+        /* margin-left: 45px; */
+        height: 28px;
+        width: 300px;
+        padding: 5px;
+        background-color: rgb(226, 226, 226);
+    }
+
+    .btn-primary2{
+        /* border-radius: 25px;  */
+        height: 40px;
+        width: 350px;
+        /* background: transparent; */
+        border-color: rgb(177, 31, 31);
+        border-style: solid;
+        color: white;
+        margin-left: 50px;
+        /* margin-left: 75px; */
+        margin-top: 40px;
+        background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+        background: linear-gradient(to right, #FF4B2B, #FF416C);
+    }
+
+    .color_bar{
+        width: 100%;
+        height: 10px;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+        background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+        background: linear-gradient(to right, #FF4B2B, #FF416C);
+
+    }
+
+    .person-fill{
+        margin-left: 40px;
+        margin-right: 10px;
+        margin-top: 15px;
+    }
+
+    .footer{
+        color: grey;
+        text-align: center;
+    }
+
+    .valid{
+        font-size: 10px;
+        margin-left: 20px;
+        color: red;
+    }
+
+    .date{
+        margin-top: 10px;
+    }
+
+
+    

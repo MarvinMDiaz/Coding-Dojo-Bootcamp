@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reg_form.css') }}">
+
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="registration_form">
+        <div class="color_bar"></div>
+        
+        
+        <form class="form_container"action="/home/new_user" method = 'post'>
+            <h1 class="hello">
+                Hello, There!
+            </h1>
+        
+            <div class="form" class="form-group">
+                <label class="label" for="first_name"></label><br>
+                <img class="person-fill"src="{{ url_for('static', filename='img/person-fill.svg') }}">
+
+                <input class="input_f" placeholder="First Name"type="text" name="first_name"> 
+            </div>
+            
+            <div class="form" class="form-group">
+                
+                <label class="label" for="last_name">
+                    
+                </label><br>
+                <img class="person-fill"src="{{ url_for('static', filename='img/person-fill.svg') }}">
+
+                <input  class="input_f" placeholder="Last Name" name="last_name" type="text">     
+            </div>
+
+            <div class="form" class="form-group">
+                <label class="label" for="email"></label><br>
+                <img class="person-fill"src="{{ url_for('static', filename='img/envelope-fill.svg') }}">
+
+                <input class="input_f" placeholder="Email" name = "email" type="email"> 
+                
+            </div>
+
+            <div class="form">
+                <label class="label" for="password"></label><br>
+                <img class="person-fill"src="{{ url_for('static', filename='img/lock-fill.svg') }}">
+
+                <input class="input_f" placeholder="Password" name="password" type="password">
+            </div>
+
+            <div class="form">
+                <label class="label" for="confirm_password"></label><br>
+                <img class="person-fill"src="{{ url_for('static', filename='img/lock-fill.svg') }}">
+
+                <input  class="input_f" placeholder="Confirm Password" name="confirm_password" type="password">
+            </div>
+            
+            <div class="btn">
+                <input class="btn-primary2" type="submit">
+                <p class="footer">Already have an Account? <a href="/home">Sign in.</a></p>
+            </div>
+            <div>
+                {% with messages = get_flashed_messages() %} 
+                {%if messages%}
+                        {% for message in messages %}            <!-- loop through the messages -->
+                            <p class="valid">{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+            {% endwith %} 
+            
+            </div>
+        
+        </form>    
+                
+        <br>
+        
+    </div>
+    
+</body>
+</html>

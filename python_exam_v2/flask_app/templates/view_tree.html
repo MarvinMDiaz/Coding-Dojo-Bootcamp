@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body{
+
+background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+background: linear-gradient(to right, #FF4B2B, #FF416C);
+
+}
+        a{
+            color: crimson;
+        }
+        .wrapper{
+            height: 1200px;
+            width: 1200px;
+            /* background-color: royalblue; */
+            margin: 0 auto;
+        }
+        .container{
+            width: 1000px;
+            height: 800px;
+            background-color: white;
+            margin: 0 auto;
+        }
+        .header{
+            height: 90px;
+            width: 950px;
+            margin: 0 auto;
+            background-color: rgb(51, 51, 51);
+            display: flex;
+            color: white;
+            /* justify-content: space-between; */
+            align-items:baseline;
+            /* margin-left: 100px; */
+        }
+        .welcome{
+            margin-right: 350px;
+            margin-left: 10px;
+
+        }
+        .log_off{
+            margin-left: 20px;
+        }
+        .trees{
+            margin: 0 auto;
+            display: flex;
+            width: 950px;
+            height: 700px;
+            background-color: violet;
+        }
+        .left{
+            height: 600px;
+            width: 50%;
+            background-color: turquoise;
+        }
+        .right{
+            height: 600px;
+            width: 50%;
+            background-color: rgb(19, 44, 187);
+        }
+        .dashboard{
+            margin-right: 10px;
+            margin-left: 15px;
+        }
+        .content{
+            margin-left: 40px;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+<div class="wrapper">
+    
+
+        <div class="container">
+            
+
+            <div class="header">
+                
+                <h1 class="welcome">Welcome {{user.first_name}} {{user.last_name}}!</h1>
+                <a href="/dashboard/my_trees"> My Trees</a>
+                <a class="dashboard" href="/dashboard"> Dashboard</a>
+                    <form class="log_off" action="/sign_out">
+                        <button type="submit">Log Off</button>
+                    </form>
+            </div>
+            <div class="content">
+                <h2>{{tree.species}} by {{tree.user.first_name}} {{tree.user.last_name}} </h2>
+                <p>Where: {{tree.location}}</p>
+                <p>When: {{tree.date_planted.strftime('%m-%d-%Y')}}</p>
+                <p>Reason: {{tree.reason}}</p>
+            </div>
+
+
+
+        </div>
+    
+</div>
+
+</body>
+</html>
