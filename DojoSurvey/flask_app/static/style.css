@@ -1,0 +1,49 @@
+#container{
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+    /* background-color: rgb(29, 29, 29); */
+    display: flex;
+    /* display: inline-block; */
+    color: white;
+    flex-direction: column;
+}
+.title{
+    color: rgb(0, 123, 172);
+    margin-bottom: 30px;
+    margin-left: 27px;
+    /* text-align: center; */
+}
+.form{
+    width:500px;
+    height: 700px;
+    background-color: rgb(53, 53, 66);
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 30px;
+    /* display: block; */
+    /* flex-direction: row; */
+}
+div{
+    margin-bottom: 25px;
+}
+.needs-validation{
+    margin-left: 30px;
+    margin-top: 10px;
+    height: 700px;
+    width: 500px;
+    /* background-color: red; */
+}
+.Survey{
+    width: 550px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.survey_wrapper{
+    width: 600px;
+    height: 310px;
+    background-color: rgb(156, 156, 156);
+    margin: 0 auto;
+    margin-top: 100px;
+}

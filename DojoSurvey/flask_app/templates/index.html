@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <div id="container">
+        <div class="form">
+
+            <h1 class="title">Dojo Survey</h1>
+
+            <form action="/survey" method='POST'>
+                
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" name='name'>
+                </div>
+
+                <div>
+                    <label  for="location">Dojo Location:</label>
+                    <select  name='location' >
+                        <option value="" selected>--Dojo Location--</option>
+                        <option value="Virgina">Virgina</option>
+                        <option value="California">California</option>
+                        <option value="Texas">Texas</option>
+                        <option value="Florida">Florida</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label  for="language">Favorite Language:</label>
+                    <select name="language">
+                        <option value ="" selected>--Language--</option>
+                        <option value="Python">Python</option>
+                        <option value="css">css</option>
+                        <option value="Java">Java</option>
+                        <option value="Mern">Mern</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <h5>Comments:</h5>
+                    <textarea value="" name="comment" rows="10" cols="30"></textarea> 
+                </div>
+                    <input type="submit" class="btn btn-primary" data-toggle="submit" aria-pressed="false" autocomplete="off">
+
+            </form>
+        </div>
+
+    </div>
+
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+
+
+
+</body>
+</html>

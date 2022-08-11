@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <div class="survey_wrapper">
+        <div class="Survey">
+        <h1>Your Survey</h1>
+
+            <table class="table table-bordered table-dark" >
+                <thead>
+                  <tr>
+                    <!-- <th scope="col">Name</th>
+                    <th scope="col">First</th> -->
+                    <!-- <th scope="col">Last</th>
+                    <th scope="col">Handle</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Name:</th>
+                    <td>{{session['name']}}</td>
+                    <!-- <td>Otto</td>
+                    <td>@mdo</td> -->
+                  </tr>
+                  <tr>
+                    <th scope="row">Dojo Location:</th>
+                    <td>{{session['location']}}</td>
+                    <!-- <td>Thornton</td>
+                    <td>@fat</td> -->
+                  </tr>
+                  <tr>
+                    <th scope="row">Favorite Language:</th>
+                    <td colspan="2">{{session['language']}}</td>
+                    <!-- <td>@twitter</td> -->
+                  </tr>
+                  <tr>
+                    <th scope="row">Comments:</th>
+                    <td colspan="2">{{session['message']}}</td>
+                    <!-- <td>@twitter</td> -->
+                  </tr>
+                </tbody>
+              </table>
+              <form action="/">
+                <button class="btn btn-secondary active"> Go Back </button> 
+              </form>
+
+        </div>
+
+
+    </div>
+</body>
+</html>
